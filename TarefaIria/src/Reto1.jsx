@@ -8,6 +8,17 @@
 // Como usalo: copia este código en src/App.jsx.
 // Comproba que non hai avisos na consola do navegador.
 
+
+//pegar todo esto en el app.jsx para ejecutarlo
+import { useState } from 'react'
+import heroImg from './assets/hero.png'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
+
+
+
+
 const linguaxes = [
   { id: 0, nome: "JavaScript", tipo: "interpretada", ano: 1995 },
   { id: 1, nome: "Java", tipo: "compilada", ano: 1995 },
@@ -18,8 +29,15 @@ const linguaxes = [
 ];
 
 export default function App() {
+  
+  const interpetadas = linguaxes.filter((l) => l.tipo === "interpretada").map((linguaxe) => (
+    <li key={linguaxe.id}>
+      <b>{linguaxe.nome}</b> ({linguaxe.tipo}, {linguaxe.ano})
+    </li>
+  ));
 
-  const elementos = linguaxes.map((linguaxe) => (
+  
+  const otras = linguaxes.filter((l) => l.tipo != "interpretada").map((linguaxe) => (
     <li key={linguaxe.id}>
       <b>{linguaxe.nome}</b> ({linguaxe.tipo}, {linguaxe.ano})
     </li>
@@ -28,7 +46,12 @@ export default function App() {
   return (
     <article>
       <h1>Linguaxes de programación</h1>
-      <ul>{elementos}</ul>
+      <h2>Interpretadas</h2>
+      <ul>{interpetadas}</ul>
+      <h2>Otras</h2>
+      <ul>{otras}</ul>
     </article>
   );
 }
+
+

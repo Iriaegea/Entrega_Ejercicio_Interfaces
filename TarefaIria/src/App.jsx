@@ -7,37 +7,37 @@ import './App.css'
 
 
 
-const linguaxes = [
-  { id: 0, nome: "JavaScript", tipo: "interpretada", ano: 1995 },
-  { id: 1, nome: "Java", tipo: "compilada", ano: 1995 },
-  { id: 2, nome: "Python", tipo: "interpretada", ano: 1991 },
-  { id: 3, nome: "C", tipo: "compilada", ano: 1972 },
-  { id: 4, nome: "PHP", tipo: "interpretada", ano: 1995 },
-  { id: 5, nome: "Go", tipo: "compilada", ano: 2009 },
+const playlists = [
+  {
+    id: 1,
+    nome: "Para estudar",
+    cancions: ["Mañá de luns", "Bosque de cores", "Cafeteira"],
+  },
+  {
+    id: 2,
+    nome: "Para correr",
+    cancions: ["Tren de medianoite", "Ritmo de présa", "Costa arriba", "Meta"],
+  },
+  {
+    id: 3,
+    nome: "Para cociñar",
+    cancions: ["Sal e pementa", "Lume lento"],
+  },
 ];
 
 export default function App() {
-  
-  const interpetadas = linguaxes.filter((l) => l.tipo === "interpretada").map((linguaxe) => (
-    <li key={linguaxe.id}>
-      <b>{linguaxe.nome}</b> ({linguaxe.tipo}, {linguaxe.ano})
-    </li>
-  ));
-
-  
-  const otras = linguaxes.filter((l) => l.tipo != "interpretada").map((linguaxe) => (
-    <li key={linguaxe.id}>
-      <b>{linguaxe.nome}</b> ({linguaxe.tipo}, {linguaxe.ano})
-    </li>
+  const elementos = playlists.map((playlist) => (
+    <section key={playlist.id}>
+      <h2>{playlist.nome}</h2>
+      <ul>{playlist.cancions.map((cancion) => <li>{cancion}</li>)} </ul>
+      {/* TODO: aquí vai a lista de cancións */}
+    </section>
   ));
 
   return (
     <article>
-      <h1>Linguaxes de programación</h1>
-      <h2>Interpretadas</h2>
-      <ul>{interpetadas}</ul>
-      <h2>Otras</h2>
-      <ul>{otras}</ul>
+      <h1>As miñas playlists</h1>
+      {elementos}
     </article>
   );
 }
