@@ -6,6 +6,17 @@
 // Como usalo: copia este código en src/App.jsx.
 // Comproba que non hai avisos na consola do navegador.
 
+
+// pegar esto tal cual en la app.jsx
+import { useState } from 'react'
+import heroImg from './assets/hero.png'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
+
+
+
+
 const playlists = [
   {
     id: 1,
@@ -28,6 +39,7 @@ export default function App() {
   const elementos = playlists.map((playlist) => (
     <section key={playlist.id}>
       <h2>{playlist.nome}</h2>
+      <ul>{playlist.cancions.map((cancion) => <li>{cancion}</li>)} </ul>
       {/* TODO: aquí vai a lista de cancións */}
     </section>
   ));
@@ -39,3 +51,6 @@ export default function App() {
     </article>
   );
 }
+
+
+

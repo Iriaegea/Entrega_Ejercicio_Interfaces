@@ -7,44 +7,40 @@ import './App.css'
 
 
 
-const playlists = [
-  {
-    id: 1,
-    nome: "Para estudar",
-    cancions: ["Mañá de luns", "Bosque de cores", "Cafeteira"],
-  },
-  {
-    id: 2,
-    nome: "Para correr",
-    cancions: ["Tren de medianoite", "Ritmo de présa", "Costa arriba", "Meta"],
-  },
-  {
-    id: 3,
-    nome: "Para cociñar",
-    cancions: ["Sal e pementa", "Lume lento"],
-  },
+const libros = [
+  { id: 1, titulo: "Dom Quixote", autor: "Miguel de Cervantes", ano: 1605 },
+  { id: 2, titulo: "Cen anos de soidade", autor: "Gabriel García Márquez", ano: 1967 },
+  { id: 3, titulo: "Os Lusíadas", autor: "Luís de Camões", ano: 1572 },
+  { id: 4, titulo: "Memorias dun neno labrego", autor: "Xosé Neira Vilas", ano: 1961 },
 ];
 
 export default function App() {
-  const elementos = playlists.map((playlist) => (
-    <section key={playlist.id}>
-      <h2>{playlist.nome}</h2>
-      <ul>{playlist.cancions.map((cancion) => <li>{cancion}</li>)} </ul>
-      {/* TODO: aquí vai a lista de cancións */}
-    </section>
+  const elementos = libros.map((l) => (
+    <Libro libro = {l} ></Libro>
   ));
 
   return (
-    <article>
-      <h1>As miñas playlists</h1>
-      {elementos}
-    </article>
+    <section>
+      <h1>Biblioteca</h1>
+      <ul>{elementos}</ul>
+    </section>
   );
 }
 
 
-
-
+function Libro(libro){
+  return 
+  <>
+  <li key={libro.id}>
+      <h3>{libro.titulo}</h3>
+      <p>
+        {libro.autor}, {libro.ano}
+      </p>
+    </li>
+    </>
+}
+  
+  
 
 
 
