@@ -7,40 +7,45 @@ import './App.css'
 
 
 
-const libros = [
-  { id: 1, titulo: "Dom Quixote", autor: "Miguel de Cervantes", ano: 1605 },
-  { id: 2, titulo: "Cen anos de soidade", autor: "Gabriel García Márquez", ano: 1967 },
-  { id: 3, titulo: "Os Lusíadas", autor: "Luís de Camões", ano: 1572 },
-  { id: 4, titulo: "Memorias dun neno labrego", autor: "Xosé Neira Vilas", ano: 1961 },
+import React from "react";
+
+
+import { Fragment } from "react";
+
+
+
+const pasos = [
+  { id: 1, texto: "Executa npm run build." },
+  { id: 2, texto: "Proba a versión final con npm run preview." },
+  { id: 3, texto: "Sube o proxecto a GitHub." },
+  { id: 4, texto: "Publica o sitio no servizo que escollas." },
 ];
 
 export default function App() {
-  const elementos = libros.map((l) => (
-    <Libro libro = {l} ></Libro>
+
+  const elementos = pasos.map((paso, indice) => (
+      if(indice>0) {
+      <div key={paso.id}>
+        <hr key={paso.id * 10}> </hr> 
+        <p key={paso.id}>{paso.texto}</p> 
+      </div>
+    
+   
+         }
+
+
+    <p key={paso.id}>{paso.texto}</p>
   ));
 
+  //const elementos = pasos.map((paso, indice) => indice > 0 ?  {<hr key={paso.id * indice}> </hr> <p key={paso.id}>{paso.texto}</p> } : <p key={paso.id}>{paso.texto}</p>);
+
   return (
-    <section>
-      <h1>Biblioteca</h1>
-      <ul>{elementos}</ul>
-    </section>
+    <article>
+      <h1>Como despregar o proxecto</h1>
+      {elementos}
+    </article>
   );
 }
-
-
-function Libro(libro){
-  return 
-  <>
-  <li key={libro.id}>
-      <h3>{libro.titulo}</h3>
-      <p>
-        {libro.autor}, {libro.ano}
-      </p>
-    </li>
-    </>
-}
-  
-  
 
 
 

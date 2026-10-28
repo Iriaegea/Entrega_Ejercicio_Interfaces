@@ -7,6 +7,18 @@
 // Como usalo: copia este código en src/App.jsx.
 // Comproba que non hai avisos na consola do navegador.
 
+
+
+//copiar tal cual en el app.jsx
+import { useState } from 'react'
+import heroImg from './assets/hero.png'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
+
+
+
+
 const libros = [
   { id: 1, titulo: "Dom Quixote", autor: "Miguel de Cervantes", ano: 1605 },
   { id: 2, titulo: "Cen anos de soidade", autor: "Gabriel García Márquez", ano: 1967 },
@@ -34,6 +46,10 @@ export default function App() {
     </section>
   );
 }
+
+
+
+
 
 
 
