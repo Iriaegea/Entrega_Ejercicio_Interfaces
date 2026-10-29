@@ -27,17 +27,20 @@ const libros = [
 ];
 
 
-
-
-export default function App() {
-  const elementos = libros.map((libro) => (
+function Libro({libro}){
+  return (
+  
     <li key={libro.id}>
       <h3>{libro.titulo}</h3>
       <p>
         {libro.autor}, {libro.ano}
       </p>
     </li>
-  ));
+)
+}
+
+export default function App() {
+  const elementos = libros.map((l) => <Libro key={l.id} libro={l}></Libro>);
 
   return (
     <section>

@@ -35,7 +35,7 @@ export default function App() {
     return <p key={paso.id}>{paso.texto}</p>
 });
 
-  //const elementos = pasos.map((paso, indice) => indice > 0 ?  {<hr key={paso.id * indice}> </hr> <p key={paso.id}>{paso.texto}</p> } : <p key={paso.id}>{paso.texto}</p>);
+const elementos = pasos.map((paso, indice) => indice > 0 ?  {<hr key={paso.id * indice}> </hr> <p key={paso.id}>{paso.texto}</p> } : <p key={paso.id}>{paso.texto}</p>);
 
   return (
     <article>

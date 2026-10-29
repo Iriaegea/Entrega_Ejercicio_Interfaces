@@ -25,20 +25,23 @@ const pasos = [
 export default function App() {
 
   const elementos = pasos.map((paso, indice) => {
+    // desde aqui 
     if(indice>0) {
     <div key={paso.id}>
       <hr key={paso.id * 10}> </hr> 
       <p key={paso.id}>{paso.texto}</p> 
     </div>
-    
+
+    // <Fragment key={paso.id}>
+    //   {(indice > 0) && <hr />
+    //<p>{paso.texto}</p>}
+    // </Fragment>
    
-         
-         
   }
   <p key={paso.id}>{paso.texto}</p>
 
 } )
-  //const elementos = pasos.map((paso, indice) => indice > 0 ?  {<hr key={paso.id * indice}> </hr> <p key={paso.id}>{paso.texto}</p> } : <p key={paso.id}>{paso.texto}</p>);
+  //const elementos = pasos.map((paso, indice) => indice > 0 ?  (<><hr key={paso.id * indice}> </hr> <p key={paso.id}>{paso.texto}</p> </>)  : (<p key={paso.id}>{paso.texto}</p>));
 
   return (
     <article>

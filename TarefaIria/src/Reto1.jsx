@@ -28,6 +28,9 @@ const linguaxes = [
   { id: 5, nome: "Go", tipo: "compilada", ano: 2009 },
 ];
 
+
+
+// se puede optimizar con una funcion en vez de poner dos veces lo mismo
 export default function App() {
   
   const interpetadas = linguaxes.filter((l) => l.tipo === "interpretada").map((linguaxe) => (
