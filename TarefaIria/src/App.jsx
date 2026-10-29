@@ -23,19 +23,17 @@ const pasos = [
 
 export default function App() {
 
-  const elementos = pasos.map((paso, indice) => (
+  const elementos = pasos.map((paso, indice) =>{
       if(indice>0) {
-      <div key={paso.id}>
-        <hr key={paso.id * 10}> </hr> 
+        return (<div key={paso.id}>
+        <hr key={paso.id * 10}/>  
         <p key={paso.id}>{paso.texto}</p> 
-      </div>
+      </div>)
     
-   
-         }
+        }
 
-
-    <p key={paso.id}>{paso.texto}</p>
-  ));
+    return <p key={paso.id}>{paso.texto}</p>
+});
 
   //const elementos = pasos.map((paso, indice) => indice > 0 ?  {<hr key={paso.id * indice}> </hr> <p key={paso.id}>{paso.texto}</p> } : <p key={paso.id}>{paso.texto}</p>);
 
