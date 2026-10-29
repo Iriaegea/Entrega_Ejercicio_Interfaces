@@ -11,6 +11,11 @@
 //
 // Como usalo: copia este código en src/App.jsx.
 // Comproba que non hai avisos na consola do navegador.
+
+
+
+
+//pegar en el app.jsx
 import { Fragment } from "react";
 
 
